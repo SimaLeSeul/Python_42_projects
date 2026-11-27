@@ -1,0 +1,32 @@
+# *************************************************************************** #
+#                                                                             #
+#                                                         :::      ::::::::   #
+#    ft_first_exception.py                              :+:      :+:    :+:   #
+#                                                     +:+ +:+         +:+     #
+#    By: mibaboul <mibaboul@student.42angouleme.    +#+  +:+       +#+        #
+#                                                 +#+#+#+#+#+   +#+           #
+#    Created: 2026/11/25 16:47:54 by mibaboul          #+#    #+#             #
+#    Updated: 2026/11/25 16:47:54 by mibaboul         ###   ########.fr       #
+#                                                                             #
+# *************************************************************************** #
+
+def input_temperature(temp_str: str) -> int:
+    return int(temp_str)
+
+
+def test_temperature() -> None:
+    print("=== Garden Temperature ===")
+    for temp_str in ["25", "abc"]:
+        print()
+        print(f"Input data is '{temp_str}'")
+        try:
+            temperature = input_temperature(temp_str)
+            print(f"Temperature is now {temperature}°C")
+        except ValueError as error:
+            print(f"Caught input_temperature error: {error}")
+    print()
+    print("All tests completed - program didn't crash!")
+
+
+if __name__ == "__main__":
+    test_temperature()
